@@ -112,3 +112,16 @@ ul {
   color: #8594e4;
   background: white;
 }
+
+.footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
