@@ -44,10 +44,6 @@ ul {
 }
 
 #date {
-  margin: 20px 0 0;
-  position: relative;
-  top: 20px;
-  left: 15px;
   font-weight: lighter;
 }
 .weather {
@@ -124,4 +120,10 @@ ul {
 }
 .link:hover {
   text-decoration: underline;
+}
+
+.date {
+  margin: 20px 0 0;
+
+  font-weight: lighter;
 }
