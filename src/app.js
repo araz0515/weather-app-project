@@ -1,4 +1,5 @@
-function currentDate(date) {
+function currentDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -20,9 +21,6 @@ function currentDate(date) {
   }
   return `${day} ${hour}:${minutes}`;
 }
-let now = new Date();
-let today = document.querySelector("#date");
-today.innerHTML = currentDate(now);
 
 function search(city) {
   let apiKey = "aaf4aefb5cfd88c1dc393518ce4188fe";
@@ -62,6 +60,21 @@ function getTemp(response) {
   document.querySelector("#feels-like").innerHTML = ` ${Math.round(
     response.data.main.feels_like
   )}˚C`;
+
+  document.querySelector("#date").innerHTML = currentDate(
+    response.data.dt * 1000
+  );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
+  console.log(response.data);
 }
 
 function getCurrentPosition(position) {
